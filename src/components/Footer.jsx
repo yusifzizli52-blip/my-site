@@ -1,10 +1,24 @@
 import { Link } from 'react-router-dom';
-import { Instagram, Mail } from 'lucide-react';
 
-// X (formerly Twitter) icon inline since lucide-react removed the Twitter export
-const XIcon = ({ size = 15, strokeWidth = 1.5 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+// SVG Icons to avoid lucide-react export issues
+const InstagramIcon = ({ size = 15 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
+
+const XIcon = ({ size = 15 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M4 4l16 16M4 20L20 4" />
+  </svg>
+);
+
+const MailIcon = ({ size = 15 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="20" height="16" x="2" y="4" rx="2" />
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
   </svg>
 );
 
@@ -26,9 +40,9 @@ const LINKS = {
 };
 
 const SOCIALS = [
-  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: InstagramIcon, href: '#', label: 'Instagram' },
   { icon: XIcon, href: '#', label: 'Twitter/X' },
-  { icon: Mail, href: '#', label: 'Email' },
+  { icon: MailIcon, href: '#', label: 'Email' },
 ];
 
 export default function Footer() {
@@ -144,7 +158,7 @@ export default function Footer() {
                 aria-label={label}
                 className="text-silver/25 hover:text-gold transition-colors duration-300"
               >
-                <Icon size={15} strokeWidth={1.5} />
+                <Icon size={15} />
               </a>
             ))}
           </div>
