@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Instagram, Youtube, Mail } from 'lucide-react';
+import { Instagram, YouTube, Mail } from 'lucide-react';
 
 // X (formerly Twitter) icon inline since lucide-react removed the Twitter export
 const XIcon = ({ size = 15, strokeWidth = 1.5 }) => (
